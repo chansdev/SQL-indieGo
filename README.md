@@ -12,8 +12,8 @@ CREATE TABLE Usuario (
 )
 ```
 _Falta login contato e dados_bank_
-## Comunidade
 
+## Comunidade
 ```sql
 CREATE TABLE Comunidade (
   ID_C int PRIMARY KEY,
@@ -22,6 +22,7 @@ CREATE TABLE Comunidade (
   Data_CriaC varchar(8)
 )
 ```
+
 ## Kickstarter
 ```sql
 create table Kickstarter(
@@ -34,6 +35,7 @@ create table Kickstarter(
 )
 ```
 _Falta recompensas_
+
 ## Projeto
 ```sql
 create table Projeto(
@@ -42,4 +44,29 @@ create table Projeto(
   Desc_P		varchar(999),
   Data_CriaP	varchar(10)
 )
+```
+
+## Doa
+```sql
+create table Doa (
+  ID_D			int PRIMARY KEY,
+  DID_U			int,
+  DID_P			int,
+  Data_Doa  date,
+  FOREIGN KEY (DID_U) REFERENCES Usuario(ID_U),
+  FOREIGN KEY (DID_P) REFERENCES Projeto(ID_P)
+);
+```
+_Falta Dados_Bank_
+
+## Posta
+```sql
+create table Posta (
+  ID_Po			int  PRIMARY KEY,
+  PID_U			int,
+  PID_P			int,
+  Data_Pos		date,
+  FOREIGN KEY (PID_U) REFERENCES Usuario(ID_U),
+  FOREIGN KEY (PID_P) REFERENCES Projeto(ID_P)
+);
 ```
