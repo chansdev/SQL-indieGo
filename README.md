@@ -11,7 +11,20 @@ CREATE TABLE Usuario (
   Data_CriaU varchar(8)
 )
 ```
-_Falta login contato e dados_bank_
+_Falta login e contato_
+
+### Dados Bancários
+```sql
+CREATE TABLE dados_bank (
+Cpf_user		int(11) PRIMARY KEY,
+ID_User			int,
+Nome_titular	varchar(50),
+Numero_agenc	int(4),
+Numero_cartao	int(16),
+Validade		varchar(5),
+FOREIGN KEY (ID_User) REFERENCES Usuario(ID_U)
+)
+```
 
 ## Comunidade
 ```sql
