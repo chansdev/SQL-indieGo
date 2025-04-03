@@ -13,17 +13,27 @@ CREATE TABLE Usuario (
 ```
 _Falta login e contato_
 
-#### Dados Bancários
+### Contato
 ```sql
-CREATE TABLE dados_bank (
-  Cpf_U		int(11) PRIMARY KEY,
-  BID_U			int,
-  Nome_Titular	varchar(50),
-  Numero_Agenc	int(4),
-  Numero_Cartao	int(16),
-  Validade		varchar(5),
-  FOREIGN KEY (BID_U) REFERENCES Usuario(ID_U)
-)
+create table Contato(
+  CID_U int PRIMARY KEY,
+  Email varchar(100),
+  Tel varchar(20),
+  Endereco varchar(999),
+  FOREIGN KEY (CID_U) REFERENCES Usuario(ID_U)
+);
+```
+
+### Login
+```sql
+create table Login(
+  LID_U int PRIMARY KEY,
+  Username varchar(100),
+  Email varchar(100),
+  tel varchar(20),
+  Senha varchar(100),
+  FOREIGN KEY (LID_U) REFERENCES Usuario(ID_U)
+);
 ```
 
 ## Comunidade
@@ -47,6 +57,7 @@ create table Kickstarter(
   Meta			float
 )
 ```
+
 #### Recompensas
 ```sql
 CREATE TABLE Recompensas(
@@ -81,6 +92,19 @@ create table Doa (
 );
 ```
 _Falta Dados_Bank_
+
+#### Dados Bancários
+```sql
+CREATE TABLE dados_bank (
+  Cpf_U		int(11) PRIMARY KEY,
+  BID_U			int,
+  Nome_Titular	varchar(50),
+  Numero_Agenc	int(4),
+  Numero_Cartao	int(16),
+  Validade		varchar(5),
+  FOREIGN KEY (BID_U) REFERENCES Usuario(ID_U)
+)
+```
 
 ## Posta
 ```sql
