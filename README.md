@@ -13,16 +13,16 @@ CREATE TABLE Usuario (
 ```
 _Falta login e contato_
 
-### Dados Bancários
+#### Dados Bancários
 ```sql
 CREATE TABLE dados_bank (
-Cpf_user		int(11) PRIMARY KEY,
-ID_User			int,
-Nome_titular	varchar(50),
-Numero_agenc	int(4),
-Numero_cartao	int(16),
-Validade		varchar(5),
-FOREIGN KEY (ID_User) REFERENCES Usuario(ID_U)
+  Cpf_U		int(11) PRIMARY KEY,
+  BID_U			int,
+  Nome_Titular	varchar(50),
+  Numero_Agenc	int(4),
+  Numero_Cartao	int(16),
+  Validade		varchar(5),
+  FOREIGN KEY (BID_U) REFERENCES Usuario(ID_U)
 )
 ```
 
@@ -47,7 +47,17 @@ create table Kickstarter(
   Meta			float
 )
 ```
-_Falta recompensas_
+#### Recompensas
+```sql
+CREATE TABLE Recompensas(
+  ID_R		int PRIMARY KEY,
+  RID_K		int,
+  Titulo	varchar(50),
+  Descricao	varchar(500),
+  Valor		float,
+  FOREIGN KEY (RID_K) REFERENCES Usuario(ID_K)
+)
+```
 
 ## Projeto
 ```sql
