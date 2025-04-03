@@ -11,7 +11,6 @@ CREATE TABLE Usuario (
   Data_CriaU varchar(8)
 )
 ```
-_Falta login e contato_
 
 ### Contato
 ```sql
@@ -91,7 +90,6 @@ create table Doa (
   FOREIGN KEY (DID_P) REFERENCES Projeto(ID_P)
 );
 ```
-_Falta Dados_Bank_
 
 #### Dados Bancários
 ```sql
